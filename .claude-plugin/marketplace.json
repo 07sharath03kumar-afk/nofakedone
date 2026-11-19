@@ -1,0 +1,12 @@
+{
+  "name": "nofakedone",
+  "owner": { "name": "07sharath03kumar-afk" },
+  "plugins": [
+    {
+      "name": "nofakedone",
+      "source": "./",
+      "description": "A Stop hook that blocks fake 'done': stubs, disabled tests, tautological asserts, swallowed errors, bypassed checks.",
+      "version": "0.1.0"
+    }
+  ]
+}

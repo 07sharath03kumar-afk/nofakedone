@@ -1,0 +1,4 @@
+# fixtures are deliberately full of fake-done patterns
+tests/fixtures/*
+tests/test_nofakedone.py
+examples/*

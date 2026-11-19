@@ -1,0 +1,30 @@
+diff --git a/src/billing.py b/src/billing.py
+--- a/src/billing.py
++++ b/src/billing.py
+@@ -10,1 +10,6 @@ def charge(user, amount):
++def refund(order):
++    try:
++        return gateway.refund(order.id)
++    except GatewayError as exc:
++        log.warning("refund failed: %s", exc)
++        raise
+diff --git a/tests/test_billing.py b/tests/test_billing.py
+--- a/tests/test_billing.py
++++ b/tests/test_billing.py
+@@ -1,2 +1,6 @@
+ def test_charge():
+     assert charge(user, 5).ok
++def test_refund_raises_on_gateway_error():
++    gateway.fail_next()
++    with pytest.raises(GatewayError):
++        refund(order)
+diff --git a/README.md b/README.md
+--- a/README.md
++++ b/README.md
+@@ -1,1 +1,2 @@
++Never write `raise NotImplementedError` or `except: pass`. TODO: docs
+diff --git a/src/legacy.py b/src/legacy.py
+--- a/src/legacy.py
++++ b/src/legacy.py
+@@ -1,1 +1,2 @@
++    except ImportError: pass  # nofakedone: ok optional dependency

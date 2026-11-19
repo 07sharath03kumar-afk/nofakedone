@@ -1,0 +1,10 @@
+{
+  "name": "nofakedone",
+  "version": "0.1.0",
+  "description": "Stops coding agents from saying 'done' while the diff hides stubs, skipped or deleted tests, assert True, swallowed errors, --no-verify or lowered coverage.",
+  "author": { "name": "07sharath03kumar-afk" },
+  "homepage": "https://github.com/07sharath03kumar-afk/nofakedone",
+  "repository": "https://github.com/07sharath03kumar-afk/nofakedone",
+  "license": "MIT",
+  "keywords": ["claude-code", "hooks", "code-review", "testing", "reward-hacking", "ai-safety", "quality-gate"]
+}

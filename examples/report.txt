@@ -1,0 +1,64 @@
+nofakedone v0.1.0  scanned 8 changed file(s)
+BLOCK CI step can no longer fail  .github/workflows/ci.yml:8  [CI_SOFT_FAIL]
+      - run: pytest || true
+      A test or lint step was set to pass even when it fails.
+BLOCK CI step can no longer fail  .github/workflows/ci.yml:9  [CI_SOFT_FAIL]
+      continue-on-error: true
+      A test or lint step was set to pass even when it fails.
+BLOCK Coverage threshold lowered  pyproject.toml:5  [COVERAGE_LOWERED]
+      fail_under = 40
+      fail_under went from 90 to 40.
+BLOCK Git hooks bypassed  scripts/release.sh:1  [HOOK_BYPASS]
+      git commit -am "release" --no-verify
+      --no-verify skips the checks the project set up.
+BLOCK Elided code placeholder  src/api.ts:1  [STUB_ELIDED]
+      // ... rest of the implementation
+      A comment stands in for code that was never written.
+BLOCK Swallowed exception  src/api.ts:2  [SWALLOWED_ERROR]
+      fetchUser().catch(() => {})
+      Errors are caught and discarded, so failures become silent successes.
+BLOCK Code detects the test environment  src/api.ts:4  [TEST_GAMING]
+      if (process.env.NODE_ENV === 'test') return mockUser
+      Production code behaves differently under test, so tests check a fake path.
+BLOCK Unimplemented stub  src/billing.py:10  [STUB_NOT_IMPLEMENTED]
+      raise NotImplementedError
+      The function raises 'not implemented' instead of doing the work.
+BLOCK Swallowed exception  src/billing.py:14  [SWALLOWED_ERROR]
+      except Exception: / pass
+      Errors are caught and discarded, so failures become silent successes.
+BLOCK Code detects the test environment  src/billing.py:17  [TEST_GAMING]
+      if "pytest" in sys.modules: return {"status": "ok"}
+      Production code behaves differently under test, so tests check a fake path.
+BLOCK Tests removed  tests/test_billing.py:1  [TESTS_REMOVED]
+      def test_charge_declined():
+      1 more test(s) removed than added.
+BLOCK Test skipped or disabled  tests/test_billing.py:1  [TEST_SKIPPED]
+      @pytest.mark.skip(reason="flaky")
+      A test was switched off instead of being made to pass.
+BLOCK Assertion that cannot fail  tests/test_billing.py:3  [TAUTOLOGY_ASSERT]
+      assert True
+      The assertion is always true, so the test proves nothing.
+BLOCK Test file deleted  tests/test_old.py  [TEST_FILE_DELETED]
+      deleted tests/test_old.py
+      A test file with 2 test(s) was removed.
+BLOCK Assertion that cannot fail  web/cart.test.js:1  [TAUTOLOGY_ASSERT]
+      it.only('adds item', () => { expect(true).toBe(true) })
+      The assertion is always true, so the test proves nothing.
+BLOCK Focused test (.only)  web/cart.test.js:1  [TEST_FOCUSED]
+      it.only('adds item', () => { expect(true).toBe(true) })
+      '.only' silently stops every other test from running.
+BLOCK Test skipped or disabled  web/cart.test.js:2  [TEST_SKIPPED]
+      xit('removes item', () => {})
+      A test was switched off instead of being made to pass.
+warn  Type or lint check suppressed  src/api.ts:3  [LINT_SUPPRESSED]
+      // @ts-ignore
+      A checker was told to look away. Fine if justified, so justify it.
+warn  Placeholder return value  src/billing.py:16  [FAKE_RETURN]
+      return True  # TODO: placeholder until gateway works
+      A hard-coded or dummy return value marked as temporary.
+warn  New TODO/FIXME  src/billing.py:16  [TODO_ADDED]
+      return True  # TODO: placeholder until gateway works
+      Work was deferred. Fine if intentional, but say so in the summary.
+
+17 blocking, 3 warning(s).
+Fix each BLOCK, or if it is genuinely intended, add `nofakedone: ok <reason>` on that line.
