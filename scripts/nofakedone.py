@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """nofakedone: audit a git diff for work that only *looks* finished.
 
-Zero dependencies. Python 3.8+.
+Zero dependencies. Tested on Python 3.10 and 3.13.
 
 Usage:
   nofakedone.py                      audit uncommitted changes (vs HEAD, plus untracked files)
