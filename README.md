@@ -7,6 +7,11 @@
 A Claude Code plugin that audits every diff before the agent is allowed to stop, and sends it back to work
 when "finished" really means a stub, a skipped test, `assert True` or a swallowed error.
 
+[![ci](https://github.com/07sharath03kumar-afk/nofakedone/actions/workflows/ci.yml/badge.svg)](https://github.com/07sharath03kumar-afk/nofakedone/actions/workflows/ci.yml)
+[![release](https://img.shields.io/github/v/release/07sharath03kumar-afk/nofakedone)](https://github.com/07sharath03kumar-afk/nofakedone/releases)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)
+
 Zero dependencies · one Python file · Python, JS/TS, Go, Rust, Java, Kotlin, C#, Ruby · also a CLI and a GitHub Action
 
 <img src="assets/demo.gif" alt="Claude claims all tests pass after stubbing a function and skipping a test; nofakedone blocks the stop with three findings; Claude then implements the function and restores the test" width="860">
