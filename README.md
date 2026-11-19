@@ -9,6 +9,10 @@ when "finished" really means a stub, a skipped test, `assert True` or a swallowe
 
 Zero dependencies · one Python file · Python, JS/TS, Go, Rust, Java, Kotlin, C#, Ruby · also a CLI and a GitHub Action
 
+<img src="assets/demo.gif" alt="Claude claims all tests pass after stubbing a function and skipping a test; nofakedone blocks the stop with three findings; Claude then implements the function and restores the test" width="860">
+
+<sub>Staged session to show the flow; the rule names and checks are the real ones nofakedone runs.</sub>
+
 </div>
 
 ---
